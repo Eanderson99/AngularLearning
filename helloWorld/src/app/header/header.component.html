@@ -1,1 +1,31 @@
-<p>header works!</p>
+<!-- property binding -->
+<h1 [textContent]="myName"></h1>
+<img [src]="myImg" width=200>
+
+<table>
+    <tr> <!-- Note: property binding doesn't work here because colspan is an attribute not a property! -->
+        <td [attr.colspan]="number">Hello</td> <!-- Attribute binding -->
+    </tr>
+</table>
+
+<!-- get img src using attribute property (another way) -->
+<img [attr.src]="myImg" width=200>
+
+<!-- class binding -->
+<h1 [class.green]="isActive" >User</h1> <!-- if isActive == true : add green class to h1 tag-->
+
+
+<!-- style binding -->
+<p [style.backgroundColor]="isActive ? 'green' : '#777'">Welcome to my first application</p>
+
+<!-- event binding -->
+<button (click)="onClick($event)">click me!</button>
+<br>
+
+<!-- event filter -->
+<input type="text" (keyup.enter)="onKeyup($event)"> <!-- execute function when enter button clicked -->
+<input type="text" (keyup.control.1)="onKeyup($event)" placeholder="Cntrl+1 to exe"> <!-- when click on Cntrl+1 -->
+<br><br>
+
+<!-- 2 way binding -->
+<input type="text" [(ngModel)]="val" (keyup.enter)="printVal()">

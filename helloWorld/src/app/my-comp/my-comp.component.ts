@@ -1,23 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: '[app-my-comp]',
+  selector: 'app-my-comp',
   templateUrl: './my-comp.component.html',
   styleUrls: ['./my-comp.component.css']
 })
 export class MyCompComponent {
-
-  hiddenData = null
   counter = 0
 
   constructor() { 
-    setInterval(() => {
+    var myInterval = setInterval(() => {
       this.counter += 1
+      if(this.counter > 7)
+        clearInterval(myInterval)
     }, 1000)
-
-    setTimeout(() => {
-      this.hiddenData = "Helloooo, i'm showing after 2 seconds."
-    }, 2000)
   }
 
   getData() {
