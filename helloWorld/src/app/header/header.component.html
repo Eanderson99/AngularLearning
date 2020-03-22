@@ -29,3 +29,10 @@
 
 <!-- 2 way binding -->
 <input type="text" [(ngModel)]="val" (keyup.enter)="printVal()">
+
+<!----------------------------------->
+
+<h1>Template variable</h1>
+<!-- Template variable -->
+<input #username type="text" placeholder="Username">
+<button (click)="printData(username)">print username</button>

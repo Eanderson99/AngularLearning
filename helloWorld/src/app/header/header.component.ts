@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: '[app-header]',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
+
+  @ViewChild('username') myInput : ElementRef;
 
   myName = "Houari"
   myImg = "../../assets/tiaret.jpg"
@@ -14,9 +16,6 @@ export class HeaderComponent implements OnInit {
   val = "admin"
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
   onClick(e) {
     console.log(e.target)
@@ -28,6 +27,10 @@ export class HeaderComponent implements OnInit {
 
   printVal() {
     console.log(this.val)
+  }
+
+  printData(e) {
+    console.log(this.myInput.nativeElement.value)
   }
 
 }
