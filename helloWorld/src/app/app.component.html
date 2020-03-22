@@ -1,4 +1,17 @@
-<app-directives></app-directives>
+<!--<app-directives></app-directives>
 <div app-header></div>
 <app-my-comp></app-my-comp>
-<div class="app-footer"></div>
+<div class="app-footer"></div>-->
+
+<!-- pass value in the component -->
+<app-content> <!-- pass tag with his content -->
+    <h1>Home Page</h1>
+</app-content>
+
+<app-content> <!-- pass the content only without tag -->
+    <ng-container class="myC">Hello ng-container</ng-container>
+</app-content>
+
+<!-- pass data from ts -->
+<!-- also pass get event from child! -->
+<app-content [my-num]="number" (m-event)="done($event)"></app-content>

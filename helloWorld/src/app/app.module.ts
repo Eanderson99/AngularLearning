@@ -8,6 +8,7 @@ import { MyCompComponent } from './my-comp/my-comp.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { DirectivesComponent } from './directives/directives.component';
+import { ContentComponent } from './content/content.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DirectivesComponent } from './directives/directives.component';
     MyCompComponent,
     FooterComponent,
     HeaderComponent,
-    DirectivesComponent
+    DirectivesComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
