@@ -7,13 +7,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { MyCompComponent } from './my-comp/my-comp.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { DirectivesComponent } from './directives/directives.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyCompComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    DirectivesComponent
   ],
   imports: [
     BrowserModule,

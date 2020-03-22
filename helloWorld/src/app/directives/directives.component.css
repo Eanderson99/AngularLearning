@@ -1,0 +1,8 @@
+.active {
+    color: #EFEFEF;
+    background-color: #2196f3
+}
+
+.not-active {
+    background-color: yellow
+}

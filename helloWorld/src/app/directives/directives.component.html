@@ -1,0 +1,47 @@
+<p>directives works!</p>
+<!-- show the div if the condition (ngIf) is true -->
+<h1 *ngIf="open">open is true!</h1>
+<div *ngIf="open; close">Open file</div> <!-- if, else -->
+<ng-template #close>
+    <div>Close file</div>
+</ng-template>
+
+<!-- switch -->
+<div [(ngSwitch)]="n">
+    <div *ngSwitchCase="1">one</div>
+    <div *ngSwitchCase="2">two</div>
+    <div *ngSwitchCase="3">three</div>
+    <div *ngSwitchDefault>Other</div>
+</div>
+
+<!-- for loop -->
+Courses:
+<ul>
+    <li *ngFor="let course of courses">{{ course }}</li>
+</ul>
+
+<ul>
+    <li *ngFor="let course of courses; index as i">{{ i + 1 }}. {{ course }}</li>
+</ul>
+
+<!-- get the first element, we can get also last, even, odd -->
+<div *ngFor="let course of courses; first as f" [style.color]="f ? 'blue' : 'black'">
+    {{ course }}
+</div>
+
+<!-- style directive -->
+<div [ngStyle]="{
+    'color': open ? 'green' : 'yellow',
+    backgroundColor: open ? '#FFF' : 'red'
+}">
+    Testing style directives
+</div>
+
+<!-- class directive -->
+<!-- add 'active' class if open == true -->
+<div [ngClass]="{
+    'active': open,
+    'not-active': !open
+}">
+    class directives
+</div>
