@@ -1,0 +1,5 @@
+<app-test *ngIf="mP == 1" [p]="mP">
+  <p #myData>From app.component</p>
+</app-test>
+
+<button (click)="mP = 150">Change param</button>
