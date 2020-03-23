@@ -13,6 +13,7 @@ export class HomeComponent {
   }
 
   deleteTask(i) {
+    if(confirm('Are you sure to delete the ' + this.taskService.tasks[i].title + ' Task'))
       this.taskService.deleteTask(i)
   }
 

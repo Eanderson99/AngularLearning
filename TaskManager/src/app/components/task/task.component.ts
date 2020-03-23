@@ -26,8 +26,10 @@ export class TaskComponent implements OnInit {
   }
 
   deleteTask() {
-    this.tasksService.deleteTask(this.taskId)
-    this.router.navigate(['/'])
+    if(confirm('Are you sure to delete the ' + this.task.title + ' Task')) {
+      this.tasksService.deleteTask(this.taskId)
+      this.router.navigate(['/'])
+    }
   }
 
   editTask() {
