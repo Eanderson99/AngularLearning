@@ -7,6 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'profile/:id', component: ProfileComponent},
   {path: 'profile', component: ProfileComponent},
   {path: '**', component: NotFoundComponent}
 ]

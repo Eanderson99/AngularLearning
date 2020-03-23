@@ -1,7 +1,12 @@
 <a routerLink="/" routerLinkActive="bg-red"
   [routerLinkActiveOptions]="{exact: true}"
 >Home</a> <!-- exact: exact link (not use contains to know if equal to the link) -->
-<a routerLink="/profile" routerLinkActive="bg-red">Profile</a>
+<!-- normal params (type 1) /profile/1 -->
+<a [routerLink]="['/profile', 1]" routerLinkActive="bg-red">User 1</a>
+<a [routerLink]="['/profile', 2]" routerLinkActive="bg-red">User 2</a>
+<!-- query params -->
 
+<a routerLink="/profile" [queryParams]="{'id': 3, 'name': 'houari'}">User 3</a>
+<a routerLink="/profile" [queryParams]="{'id': 4}">User 4</a>
 
 <router-outlet></router-outlet>
