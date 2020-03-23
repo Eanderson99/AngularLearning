@@ -1,2 +1,4 @@
-## Generate Routing file
-ng generate module app-routing --flat --module=app
+## Some Commands
+* Generate Routing file
+
+      ng generate module app-routing --flat --module=app
