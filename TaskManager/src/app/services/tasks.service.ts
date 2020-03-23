@@ -6,26 +6,37 @@ import { Injectable } from '@angular/core';
 })
 export class TasksService {
 
-  tasks: Array<Task> = [
-    {title: "First", description: "This is my first task!"}
-  ]
+  tasks: Array<Task> = []
 
-  constructor() { }
-
-  deleteTask(i) {
-    this.tasks.splice(i, 1) // delete one element at the index=1
-  }
-
-  addTask(title, description) {
-    this.tasks.push({title, description})
-  }
+  constructor() {
+    let savedTasks = localStorage.getItem('tasks') 
+    if(savedTasks)
+      this.tasks = JSON.parse(savedTasks)
+    else
+      this.tasks = []
+   }
 
   getTask(index: number): Task {
     return this.tasks[index]
   }
 
+  addTask(title, description) {
+    this.tasks.push({title, description})
+    this.saveAll()
+  }
+
   editTask(index, task) {
     this.tasks[index] = task
+    this.saveAll()
+  }
+
+  deleteTask(i) {
+    this.tasks.splice(i, 1) // delete one element at the index=1
+    this.saveAll()
+  }
+
+  saveAll() { // save to file
+      localStorage.setItem('tasks', JSON.stringify(this.tasks))
   }
 
 }
