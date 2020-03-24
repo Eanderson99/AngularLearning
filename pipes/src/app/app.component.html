@@ -1,0 +1,25 @@
+<p>
+  {{ mText | uppercase }}
+  {{ mText | lowercase }}
+  {{ mText | titlecase }}
+</p>
+<p>{{ mText | slice : 1 : 5 }} <!-- substring --></p>
+
+<!-- convert json to string -->
+<p>
+  {{ mObj | json }}
+</p>
+<!-- digit info => : '<fill before point by 0>.<fill after point by 0>-<max numbers after point >' -->
+<p>{{ salary | number : '6.2-3'}}</p>
+
+<!-- Percent number * 100 + %, we can add digit infos -->
+<p>{{ average | percent }}</p>
+
+<!-- 
+  used with salary, he add $ (default) & comma between each hundred numbers
+  symbol|symbol-narrow|code (symbol: code+symbol, symbol-narrow: symbol only, code: code (name) only)
+ -->
+<p>{{ salary | currency : 'EUR' : 'symbol'}}</p>
+
+<!-- Date -->
+<p>{{ mDate | date : 'dd-MM-y hh:mm:ss' : 'GMT+1'}}</p>
