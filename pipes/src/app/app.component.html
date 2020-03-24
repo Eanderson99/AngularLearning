@@ -23,3 +23,7 @@
 
 <!-- Date -->
 <p>{{ mDate | date : 'dd-MM-y hh:mm:ss' : 'GMT+1'}}</p>
+
+<!-- Custom pipe -->
+<p *ngFor="let n of mArr | even">{{ n }}</p>
+<button (click)="addNumberToArr()">Add 8 to Array</button>

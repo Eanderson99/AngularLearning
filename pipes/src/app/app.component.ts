@@ -12,4 +12,9 @@ export class AppComponent {
   salary = 1270.54327
   average = 0.73
   mDate = new Date()
+  mArr = [1, 2, 3, 4, 5]
+
+  addNumberToArr() {
+    this.mArr.push(6)
+  }
 }
