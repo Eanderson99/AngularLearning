@@ -11,6 +11,7 @@ import { DirectivesComponent } from './directives/directives.component';
 import { ContentComponent } from './content/content.component';
 import { HostlistenerdemoComponent } from './hostlistenerdemo/hostlistenerdemo.component';
 import { GreenDirective } from './directive/green.directive';
+import { CopyDirective } from './directive/copy.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { GreenDirective } from './directive/green.directive';
     DirectivesComponent,
     ContentComponent,
     HostlistenerdemoComponent,
-    GreenDirective
+    GreenDirective,
+    CopyDirective
   ],
   imports: [
     BrowserModule,

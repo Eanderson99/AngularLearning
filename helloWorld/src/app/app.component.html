@@ -18,9 +18,13 @@
 
 <app-hostlistenerdemo></app-hostlistenerdemo>
 
-<!-- Custom directives -->
+<!-- Custom attribute directive -->
 <p appGreen [color]="mColor">
     Hello p with green directive!
 </p>
-
 <button (click)="mColor = '#2196f3'">Change Directive Color</button>
+
+<!-- Custom structural directive -->
+<p *appCopy="5">
+    Inside paragraph with structral directive
+</p>
