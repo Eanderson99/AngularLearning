@@ -9,7 +9,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   number = 5
-  title = 'helloWorld';
+  title = 'helloWorld'
+  mColor = '#080'
 
   done(e) {
     console.log(e)

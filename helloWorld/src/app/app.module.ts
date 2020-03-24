@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { ContentComponent } from './content/content.component';
 import { HostlistenerdemoComponent } from './hostlistenerdemo/hostlistenerdemo.component';
+import { GreenDirective } from './directive/green.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HostlistenerdemoComponent } from './hostlistenerdemo/hostlistenerdemo.c
     HeaderComponent,
     DirectivesComponent,
     ContentComponent,
-    HostlistenerdemoComponent
+    HostlistenerdemoComponent,
+    GreenDirective
   ],
   imports: [
     BrowserModule,

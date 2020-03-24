@@ -17,3 +17,10 @@
 <app-content [my-num]="number" (m-event)="done($event)"></app-content>
 
 <app-hostlistenerdemo></app-hostlistenerdemo>
+
+<!-- Custom directives -->
+<p appGreen [color]="mColor">
+    Hello p with green directive!
+</p>
+
+<button (click)="mColor = '#2196f3'">Change Directive Color</button>
