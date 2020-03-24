@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { ContentComponent } from './content/content.component';
+import { HostlistenerdemoComponent } from './hostlistenerdemo/hostlistenerdemo.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ContentComponent } from './content/content.component';
     FooterComponent,
     HeaderComponent,
     DirectivesComponent,
-    ContentComponent
+    ContentComponent,
+    HostlistenerdemoComponent
   ],
   imports: [
     BrowserModule,
