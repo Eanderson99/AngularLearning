@@ -1,0 +1,15 @@
+<form #f="ngForm" (ngSubmit)="onLogin(f)" onsubmit="return void(0)">
+    <div ngModelGroup="user"> <!-- Group of controls in one object (in FormModel) -->
+        <input #username="ngModel" type="text" name="username" placeholder="Username" ngModel required>
+        <p *ngIf="username.touched && username.errors?.required">This input is required!</p><br>
+        <input type="password" name="password" ngModel placeholder="Password" minlength="3" maxlength="25"><br>
+    </div>
+    <input #email="ngModel" name="email" type="text" placeholder="Email" ngModel email required><br>
+    <input type="number" name="age" placeholder="Age" ngModel min="18" max="100"><br>
+
+    <!-- make default value -->
+    <input type="text" name="fullname" [ngModel]="'mohamed'"><br>
+
+    <button type="submit">Submit</button>
+    <button type="button" (click)="onReset(f)">Reset</button>
+</form>
