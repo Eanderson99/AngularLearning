@@ -1,0 +1,30 @@
+<h1>Forms</h1>
+
+<!-- Group form -->
+<form [formGroup]="mForm" (ngSubmit)="onSubmit()">
+    <div formGroupName="user">
+        <input type="text" placeholder="Name" formControlName="name">
+        <input type="email" placeholder="Email" formControlName="email">
+    </div>
+    <button>Submit</button>
+</form>
+
+<br><hr><br>
+
+<!-- Array form -->
+<form [formGroup]="mArrForm" (ngSubmit)="onSubmitArrForm()">
+    <div formArrayName="user">
+        <input type="text" placeholder="First name" formControlName="0">
+        <input type="text" placeholder="Last name" formControlName="1">
+    </div>
+    <button>Submit</button>
+</form>
+
+<br><hr><br>
+<h2>Form validation</h2>
+<form [formGroup]="mFormWithValidation" (ngSubmit)="onSubmitFormWithV()">
+    <input type="text" placeholder="Email" formControlName="email"><br>
+    <input type="text" placeholder="User" formControlName="user"><p *ngIf="mFormWithValidation.get('user').errors?.mohamed">User is invalid!</p><br>
+    <input type="text" placeholder="Pass" formControlName="pass">
+    <button>Login</button>
+</form>
