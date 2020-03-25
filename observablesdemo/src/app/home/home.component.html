@@ -1,0 +1,4 @@
+<a routerLink="/about">About</a>
+<br>
+<!--Numbers: <span *ngFor="let n of myArr">{{ n }}</span>-->
+Numbers: <span *ngFor="let n of myObs | async">{{ n }}</span>
