@@ -1,0 +1,13 @@
+<p @fadeIn (@fadeIn.start)="start()" (@fadeIn.done)="done()" *ngFor="let course of courses; index as i" class="alert alert-primary">
+    course {{ i + 1 }}: <span>{{course}}</span>
+</p>
+
+<div @fadeDiv style="background-color: #2196f3;">
+    Welcome to <span style="color: white">Angular App!</span>
+</div>
+<br>
+<!-- Custom animation -->
+<button (click)='changeMe()'>Start Animation bellow</button>
+<div [@customAnim]="state">
+    Hello World!
+</div>
