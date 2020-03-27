@@ -1,3 +1,4 @@
+import { Task } from './../../interfaces/task';
 import { Title } from '@angular/platform-browser';
 import { TasksService } from './../../services/tasks.service';
 import { Component, OnInit } from '@angular/core';
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+
+  tasks: Array<Task>
+
   constructor(public taskService: TasksService, private title: Title) {
     this.title.setTitle('Task Manager')
+  }
+
+  ngOnInit() {
+      this.tasks = this.taskService.tasks
   }
 
   deleteTask(i) {
