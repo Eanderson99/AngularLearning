@@ -1,3 +1,4 @@
+import { ServiceWithInterceptor } from './services/service-with-interceptor.service';
 import { MyServiceService } from './services/my-service.service';
 import { TestService } from './services/test.service';
 import { Component, OnInit } from '@angular/core';
@@ -12,8 +13,7 @@ import { HttpEvent, HttpEventType } from '@angular/common/http';
 export class AppComponent implements OnInit {
   title = 'network';
 
-  constructor(private testService: TestService, private myService: MyServiceService) {
-    
+  constructor(private testService: TestService, private myService: MyServiceService, private serviceWithInter: ServiceWithInterceptor) {
   }
 
   ngOnInit() {
@@ -39,6 +39,10 @@ export class AppComponent implements OnInit {
       if(e.type == HttpEventType.Response)
         console.log("Response ", e);
     })
+  }
+
+  getPostsWithIntercept() {
+    this.serviceWithInter.getPosts().subscribe(data => console.log(data))
   }
 
 }
