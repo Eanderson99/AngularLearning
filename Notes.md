@@ -19,6 +19,10 @@
 
       ng build --prod -aot --output-hashing none
 
+* Angular Elements
+
+      npm install --save @angular/elements   
+
 ### Multi Lang app
 * Generate translation files
 
@@ -40,4 +44,3 @@
   2. run this command:
 
      npm run build:i18n
-
