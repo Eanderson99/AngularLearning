@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -10,6 +11,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { AppComponent } from './app.component';
 import { SidenavsComponent } from './components/navigation/sidenavs/sidenavs.component';
 
+// Routing
+import { AppRoutingModule } from './app-routing.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +21,9 @@ import { SidenavsComponent } from './components/navigation/sidenavs/sidenavs.com
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    
+    // Material 
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,

@@ -1,1 +1,13 @@
-<app-sidenavs></app-sidenavs>
+<mat-drawer-container class="container">
+    <mat-drawer #drawer class="sidenav" mode="side">
+        <button routerLink="/customers">Customers</button>
+        <button routerLink="/orders">Order</button>
+        <button routerLink="/messages">Messages</button>
+    </mat-drawer>
+    <div class="sidenav-content">
+        <button mat-icon-button (click)="drawer.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <router-outlet></router-outlet>
+    </div>
+</mat-drawer-container>
