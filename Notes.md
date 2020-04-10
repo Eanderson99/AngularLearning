@@ -44,3 +44,12 @@
   2. run this command:
 
      npm run build:i18n
+
+### Update angular app to latest version
+
+     ng update @angular/cli @angular/core
+
+### Material
+* Install angular material
+
+     npm install --save @angular/material @angular/cdk @angular/animations
