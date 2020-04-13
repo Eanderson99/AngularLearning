@@ -1,0 +1,55 @@
+<mat-horizontal-stepper [linear]="true" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Enter recipient info</ng-template>
+            <mat-form-field>
+                <input matInput placeholder="Email" formControlName="emailCntrl" required>
+            </mat-form-field>
+            <br>
+
+            <!-- Autocomplete input -->
+            <mat-form-field>
+                <input type="text" formControlName="priorityCntrl" placeholder="Proirity" matInput [matAutocomplete]="auto" required>
+                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                    <mat-option *ngFor="let priority of priorities" value="priority">
+                        {{ priority }}
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+
+            <div>
+                <button mat-icon-button matStepperNext>
+                    <mat-icon>arrow_forward</mat-icon>
+                </button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+        <ng-template matStepLabel>Email Content</ng-template>
+        <form [formGroup]="secondFormGroup">
+            <mat-form-field>
+                <input matInput placeholder="Message" formControlName="msgCntrl" required>
+            </mat-form-field>
+            <div>
+                <button mat-icon-button matStepperPrevious>
+                    <mat-icon>arrow_back</mat-icon>
+                </button>
+                <button mat-icon-button matStepperNext>
+                    <mat-icon>send_outline</mat-icon>
+                </button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [optional]="true">
+        <ng-template matStepLabel>Preview</ng-template>
+        <p>Message sent!</p>
+        <div>
+            <button mat-icon-button matStepperPrevious>
+                <mat-icon>arrow_back</mat-icon>
+            </button>
+            <button mat-icon-button (click)="stepper.reset">
+                <mat-icon>refresh</mat-icon>
+            </button>
+        </div>
+    </mat-step>
+</mat-horizontal-stepper>
