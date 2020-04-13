@@ -1,0 +1,8 @@
+mat-horizontal-stepper {
+    width: 600px;
+    margin: auto;
+}
+
+.mat-form-field {
+    width: 100%
+}
