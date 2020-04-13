@@ -9,11 +9,8 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  imports: [
-    CommonModule,
-    OrdersRoutingModule
-  ],
-  declarations: [OrderListComponent]
+  imports: [RouterModule.forChild(routes)],
+  exports: [ RouterModule ]
 })
 
 export class OrdersRoutingModule { }

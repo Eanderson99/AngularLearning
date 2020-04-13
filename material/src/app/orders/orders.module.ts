@@ -1,15 +1,19 @@
-import { RouterModule, Routes } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { OrderListComponent } from './../orders/order-list/order-list.component';
 
-const routes: Routes = [
-  { path: '', component: OrderListComponent}
-]
+// Material
+import { MatTabsModule } from '@angular/material/tabs'; 
+import { OrdersRoutingModule } from './orders-routing.module';
+
 
 @NgModule({
-  imports: [ RouterModule.forChild(routes) ],
-  exports: [ RouterModule ],
+  imports: [
+    CommonModule,
+    OrdersRoutingModule,
+    MatTabsModule
+  ],
   declarations: [OrderListComponent]
 })
 
