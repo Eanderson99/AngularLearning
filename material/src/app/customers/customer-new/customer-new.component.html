@@ -6,7 +6,8 @@
                 <!-- [errorStateMatcher]="matcher" -->
                 <input matInput placeholder="Email" [formControl]="emailFormControl">
                 <mat-hint align="end">Hint: email@domain.com</mat-hint>
-                <mat-error align="end" *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                <mat-error align="end"
+                    *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
                     Please enter a valid email address!
                 </mat-error>
             </mat-form-field>
@@ -28,9 +29,9 @@
                 <input matInput placeholder="Fax">
                 <mat-icon matSuffix>phone</mat-icon>
             </mat-form-field>
-            
-            <button mat-button class="primary full-width" style="background-color: #2196f3; color: #EFEFEF">Save</button>
         </form>
     </mat-card-content>
-    <mat-card-actions></mat-card-actions>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="openRepDialog()">Save</button>
+    </mat-card-actions>
 </mat-card>
