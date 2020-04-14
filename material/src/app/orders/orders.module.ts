@@ -14,6 +14,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   imports: [
@@ -29,7 +32,10 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
     MatDatepickerModule,
     MatInputModule,
     MatTabsModule,
-    MatMomentDateModule
+    MatMomentDateModule,
+    MatTableModule,
+    MatSortModule,
+    MatCheckboxModule
   ],
   declarations: [OrderListComponent, OrderNewComponent]
 })
