@@ -14,6 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     MatButtonModule,
     MatIconModule,
     MatStepperModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatTooltipModule
   ],
   declarations: [MessageListComponent, MessageNewComponent]
 })
