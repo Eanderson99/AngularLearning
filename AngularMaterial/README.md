@@ -1,8 +1,8 @@
 ### Material
 * Install angular material
 
-     npm install --save @angular/material @angular/cdk 
-@angular/animations
+     ng add @angular/material
+     npm install --save @angular/material @angular/cdk @angular/animations
 
 * Support Date picker
 
