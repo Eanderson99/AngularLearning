@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
+import { PageEvent } from '@angular/material/paginator';
 
 const ELEMENT_DATA = [
   {
@@ -63,14 +64,33 @@ const ELEMENT_DATA = [
 export class OrderListComponent implements OnInit {
 
   displayedColumns: string[] = ['action', 'orderNumber', 'orderDate', 'description', 'total'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  dataSource: MatTableDataSource<object>;
+
+  length = 100;
+  pageIndex = 0;
+  pageSize = 10;
+  pageSizeOptions = [1, 2, 5, 10];
+  pageEvent: PageEvent;
  
   @ViewChild(MatSort) sort: MatSort;
  
-  constructor() { }
+  loadData(pageIndex: number, pageSize: number) {
+    this.dataSource = new MatTableDataSource<object>(ELEMENT_DATA.slice(pageIndex, pageIndex + pageSize));
+  }
 
   ngOnInit(): void {
+    this.loadData(0, this.pageSize);
+    this.dataSource = new MatTableDataSource(ELEMENT_DATA);
     this.dataSource.sort = this.sort;
+  }
+
+  onPageChange(event) {
+    const previousPageIndex = event.previousPageIndex;
+    this.pageIndex = event.pageIndex;
+    this.pageSize = event.pageSize;
+    const length = event.length;
+
+    this.loadData(this.pageIndex, this.pageSize);
   }
 
   selectAll() {
