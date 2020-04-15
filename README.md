@@ -1,4 +1,4 @@
-# Angular Learning :heart: :fire: 
+# Angular Learning Journey :heart: :fire: 
  The code was written :computer: in my learning 📖 process (samples & projects).
 
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
